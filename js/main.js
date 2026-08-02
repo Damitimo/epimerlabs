@@ -1,5 +1,5 @@
 // ==============================
-// Alphafox — Main JavaScript
+// Epimer Labs — Main JavaScript
 // BB.Agency-inspired interactions
 // ==============================
 

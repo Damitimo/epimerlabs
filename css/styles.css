@@ -1,5 +1,5 @@
 /* ================================
-   Alphafox – BB.Agency-Inspired Design System
+   Epimer Labs – BB.Agency-Inspired Design System
    ================================ */
 
 /* ---------- Reset & Base ---------- */
@@ -18,8 +18,8 @@
     --gray-500: #6e6e68;
     --gray-600: #484844;
     --gray-700: #2c2c28;
-    --accent: #E00037;
-    --accent-light: #F01A50;
+    --accent: #F63200;
+    --accent-light: #FF5A2B;
 
     /* Typography */
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
@@ -211,6 +211,25 @@ p {
     flex-shrink: 0;
 }
 
+.logo-lockup {
+    height: 26px;
+    width: auto;
+    display: block;
+}
+
+.footer-brand {
+    width: 100%;
+}
+
+.footer-brand .logo {
+    width: 100%;
+}
+
+.footer-brand .logo .logo-lockup {
+    width: 100%;
+    height: auto;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -384,6 +403,99 @@ p {
     line-height: 1.4;
     max-width: 200px;
     margin: 0 auto;
+}
+
+/* ---------- Client Logo Wall ---------- */
+.logo-wall {
+    padding: var(--space-xl) 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.logo-wall-label {
+    display: block;
+    text-align: center;
+    font-size: var(--label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+}
+
+.logo-wall-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+}
+
+.client-logo {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--gray-400);
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.client-logo:hover { color: var(--black); }
+
+/* ---------- Problem Section ---------- */
+.problem-section {
+    background: var(--black);
+}
+
+.problem-section .section-title,
+.problem-section .problem-card h3 {
+    color: var(--white);
+}
+
+.problem-section .section-intro,
+.problem-section .problem-card p {
+    color: var(--gray-400);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-md);
+}
+
+.problem-card {
+    padding: var(--space-md);
+    border: 1px solid var(--gray-700);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.problem-card:hover {
+    border-color: var(--gray-500);
+    transform: translateY(-4px);
+}
+
+.problem-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-sm);
+}
+
+.problem-card p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.problem-answer {
+    margin-top: var(--space-lg);
+    text-align: center;
+}
+
+.problem-answer p {
+    color: var(--white);
+    font-size: 1.35rem;
+    font-weight: 600;
+    max-width: 700px;
+    margin: 0 auto var(--space-md);
 }
 
 /* ---------- Section Base ---------- */
@@ -725,7 +837,7 @@ p {
 
 /* ---------- Big CTA Section ---------- */
 .cta-section {
-    background: var(--black);
+    background: var(--accent);
     padding: var(--space-2xl) 0;
     text-align: center;
 }
@@ -782,7 +894,9 @@ p {
     font-size: 1.1rem;
     color: var(--gray-400);
     font-weight: 500;
-    max-width: 300px;
+    width: 100%;
+    text-align: right;
+    margin-top: 0.75rem;
 }
 
 .footer-grid {

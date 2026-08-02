@@ -1,6 +1,6 @@
-# Alphafox Healthcare Design Agency Website
+# Epimer Labs Website
 
-A modern, responsive website for Alphafox, a healthcare design agency that bridges clinical insight with exceptional digital experiences.
+A modern, responsive website for Epimer Labs, a healthcare design agency that bridges clinical insight with exceptional digital experiences.
 
 ## 🎨 Design Inspiration
 
@@ -13,7 +13,7 @@ This website is inspired by the clean, modern aesthetic of [Gene Worldwide](http
 ## 📁 Project Structure
 
 ```
-AlphaFox/
+Epimer Labs/
 ├── index.html          # Homepage
 ├── about.html          # About page
 ├── services.html       # Services page
@@ -85,13 +85,13 @@ The website is fully responsive with breakpoints at:
 
 ## 📧 Contact
 
-- Email: hello@alphafox.design
-- Projects: projects@alphafox.design
-- Careers: careers@alphafox.design
+- Email: hello@epimerlabs.com
+- Projects: projects@epimerlabs.com
+- Careers: careers@epimerlabs.com
 
 ## 📝 License
 
-© 2025 Alphafox. All rights reserved.
+© 2025 Epimer Labs. All rights reserved.
 
 ---
 
