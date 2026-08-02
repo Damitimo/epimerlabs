@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#F63200"/><stop offset="1" stop-color="#FF5A2B"/>
+</linearGradient>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#231F20"/><stop offset="1" stop-color="#4a4243"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="#E9ECEF"/>
+<circle cx="80" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="172" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="264" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="356" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="448" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="540" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="632" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="724" cy="75" r="7" fill="#D8DCE1"/>
+<circle cx="80" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="172" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="264" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="356" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="448" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="540" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="632" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="724" cy="167" r="7" fill="#D8DCE1"/>
+<circle cx="80" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="172" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="264" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="356" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="448" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="540" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="632" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="724" cy="259" r="7" fill="#D8DCE1"/>
+<circle cx="80" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="172" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="264" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="356" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="448" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="540" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="632" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="724" cy="351" r="7" fill="#D8DCE1"/>
+<circle cx="80" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="172" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="264" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="356" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="448" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="540" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="632" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="724" cy="443" r="7" fill="#D8DCE1"/>
+<circle cx="80" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="172" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="264" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="356" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="448" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="540" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="632" cy="535" r="7" fill="#D8DCE1"/>
+<circle cx="724" cy="535" r="7" fill="#D8DCE1"/>
+<polyline points="80,535 264,351 448,443 632,167 724,75" fill="none" stroke="#F63200" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><circle cx="724" cy="75" r="18" fill="#F63200"/>
+</svg>

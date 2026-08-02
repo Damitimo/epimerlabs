@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#F63200"/><stop offset="1" stop-color="#FF5A2B"/>
+</linearGradient>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#231F20"/><stop offset="1" stop-color="#4a4243"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="#F5F6F7"/>
+<rect x="170" y="80" width="130" height="120" rx="20" fill="#F63200"/>
+<rect x="335" y="80" width="130" height="120" rx="20" fill="#231F20"/>
+<rect x="500" y="80" width="130" height="120" rx="20" fill="#D8DCE1"/>
+<rect x="170" y="235" width="130" height="120" rx="20" fill="#D8DCE1"/>
+<rect x="335" y="235" width="130" height="120" rx="20" fill="#FF5A2B"/>
+<rect x="500" y="235" width="130" height="120" rx="20" fill="#231F20"/>
+<rect x="170" y="390" width="130" height="120" rx="20" fill="#231F20"/>
+<rect x="335" y="390" width="130" height="120" rx="20" fill="#D8DCE1"/>
+<rect x="500" y="390" width="130" height="120" rx="20" fill="#F63200"/>
+
+</svg>
