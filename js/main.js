@@ -167,3 +167,16 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// ---------- Form success message (?sent=1 after /api/contact redirect) ----------
+if (new URLSearchParams(location.search).get('sent') === '1') {
+    const form = document.querySelector('form[action="/api/contact"]');
+    if (form) {
+        const note = document.createElement('p');
+        note.textContent = "Thanks, your message is on its way. We'll get back to you shortly.";
+        note.style.cssText = 'background: var(--accent); color: #fff; padding: 1rem 1.25rem; border-radius: 8px; font-weight: 500; margin-bottom: 1.5rem;';
+        form.parentElement.insertBefore(note, form);
+        note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    history.replaceState(null, '', location.pathname);
+}

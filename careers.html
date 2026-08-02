@@ -193,7 +193,7 @@
             <button class="modal-close" onclick="document.getElementById('portfolioModal').classList.remove('active'); document.body.style.overflow='';" aria-label="Close">&times;</button>
             <h3>Send Your Portfolio</h3>
             <p style="color: var(--gray-500); margin-bottom: var(--space-md);">Tell us about yourself and what you want to build with us.</p>
-            <form action="https://formsubmit.co/timothy.o.ojo@gmail.com" method="POST">
+            <form action="/api/contact" method="POST">
                 <input type="hidden" name="_subject" value="New Portfolio Submission — Epimer Labs Careers">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://www.epimerlabs.com/careers.html">
