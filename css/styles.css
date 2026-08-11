@@ -2,6 +2,43 @@
    Epimer Labs – BB.Agency-Inspired Design System
    ================================ */
 
+/* ---------- Fonts ---------- */
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('../fonts/neue-haas-display-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('../fonts/neue-haas-display-roman.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('../fonts/neue-haas-display-medium.woff2') format('woff2');
+    font-weight: 500 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('../fonts/neue-haas-display-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Neue Haas Grotesk Display';
+    src: url('../fonts/neue-haas-display-black.woff2') format('woff2');
+    font-weight: 800 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ---------- Reset & Base ---------- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -22,7 +59,7 @@
     --accent-light: #FF5A2B;
 
     /* Typography */
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --font: 'Neue Haas Grotesk Display', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     --h1: clamp(3rem, 6.5vw, 5.5rem);
     --h2: clamp(2.25rem, 4.5vw, 4rem);
     --h3: clamp(1.5rem, 2.5vw, 2.25rem);
@@ -76,8 +113,8 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.03em;
 }
 
-h1 { font-size: var(--h1); font-weight: 800; }
-h2 { font-size: var(--h2); }
+h1 { font-size: var(--h1); font-weight: 500; }
+h2 { font-size: var(--h2); font-weight: 500; letter-spacing: -0.02em; }
 h3 { font-size: var(--h3); font-weight: 600; }
 
 p {
@@ -194,7 +231,7 @@ p {
 
 .logo {
     font-size: 1.75rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--black);
     letter-spacing: -0.04em;
     transition: var(--transition);
@@ -314,9 +351,9 @@ p {
 
 .hero-statement {
     font-size: var(--h1);
-    font-weight: 800;
+    font-weight: 500;
     line-height: 1.05;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
     color: var(--black);
     max-width: 100%;
 }
@@ -390,7 +427,7 @@ p {
 
 .stat-number {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 800;
+    font-weight: 500;
     color: var(--white);
     line-height: 1;
     letter-spacing: -0.03em;
@@ -433,7 +470,7 @@ p {
 
 .client-logo {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--gray-400);
     transition: var(--transition);
@@ -681,7 +718,7 @@ p {
 
 .impact-card .impact-stat {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 800;
+    font-weight: 500;
     color: var(--accent);
     line-height: 1;
     margin-bottom: var(--space-sm);
@@ -1110,7 +1147,7 @@ p {
 
 .partner-stat div strong {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 500;
     color: var(--accent);
     display: block;
     line-height: 1;
@@ -1259,7 +1296,7 @@ p {
 
 .number-item .number {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 800;
+    font-weight: 500;
     color: var(--accent);
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -1363,7 +1400,7 @@ p {
 .result-item { text-align: center; }
 .result-number {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 500;
     color: var(--accent);
     line-height: 1;
     letter-spacing: -0.03em;
@@ -2089,4 +2126,192 @@ p {
     font-size: var(--h4);
     margin-bottom: 0.25rem;
     padding-right: 2rem;
+}
+
+/* ---------- Case Study Page ---------- */
+.navbar-dark .nav-menu a { color: rgba(255, 255, 255, 0.7); }
+.navbar-dark .nav-menu a:hover,
+.navbar-dark .nav-menu a.active { color: var(--white); }
+.navbar-dark .nav-cta { background: var(--white); color: var(--black) !important; }
+.navbar-dark .nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+.navbar-dark .menu-toggle span { background: var(--white); }
+.navbar-dark.scrolled {
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom: 1px solid var(--gray-700);
+}
+
+.case-hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 11rem 0 6rem;
+}
+
+.case-hero-overline {
+    display: block;
+    font-size: var(--label);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 1.5rem;
+}
+
+.case-hero h1 {
+    color: var(--white);
+    font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+    max-width: 1080px;
+    margin-bottom: 2rem;
+}
+
+.case-hero-industry {
+    display: block;
+    font-size: var(--small);
+    color: var(--gray-400);
+    margin-bottom: 2.5rem;
+}
+
+.case-meta-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.case-chip {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    font-size: var(--small);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.case-overview {
+    background: var(--off-white);
+    padding: var(--space-xl) 0;
+}
+
+.case-overview-lede {
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    max-width: 900px;
+    margin-bottom: var(--space-lg);
+}
+
+.case-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.case-overline {
+    display: block;
+    font-size: var(--label);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.case-result-number {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.case-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.case-stat-number {
+    display: block;
+    font-size: clamp(2.75rem, 4.5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+}
+
+.case-feature {
+    padding: var(--space-xl) 0;
+}
+
+.case-feature-tinted {
+    background: var(--off-white);
+}
+
+.case-feature-row {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.case-feature-flip .case-feature-text { order: 2; }
+.case-feature-flip .case-feature-visual { order: 1; }
+
+.case-feature-text h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 1.25rem;
+}
+
+.case-feature-text p {
+    color: var(--gray-500);
+    margin-bottom: 1rem;
+}
+.case-feature-text p:last-child { margin-bottom: 0; }
+
+.case-feature-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 60px rgba(10, 10, 10, 0.12);
+}
+
+.case-feature-visual-phone {
+    display: flex;
+    justify-content: center;
+}
+
+.case-feature-visual-phone img {
+    max-width: 340px;
+}
+
+.case-quote {
+    max-width: 900px;
+    border-left: 3px solid var(--accent);
+    padding-left: clamp(1.5rem, 4vw, 3rem);
+}
+
+.case-quote p {
+    font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.case-quote cite {
+    font-style: normal;
+    font-size: var(--small);
+    color: var(--gray-500);
+}
+
+@media (max-width: 968px) {
+    .case-feature-row { grid-template-columns: 1fr; gap: var(--space-md); }
+    .case-feature-flip .case-feature-text { order: 1; }
+    .case-feature-flip .case-feature-visual { order: 2; }
+    .case-overview-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+    .case-stats { grid-template-columns: 1fr; gap: var(--space-md); }
 }
