@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectorgurus Case Study &mdash; Epimer Labs</title>
+    <meta name="description" content="How we built the AI + human routing engine, delivery pipeline, and analytics that scaled Vectorgurus into a raster-to-vector platform run by both machines and master illustrators.">
+    <meta property="og:title" content="Vectorgurus Case Study &mdash; Epimer Labs">
+    <meta property="og:description" content="How we built the AI + human routing engine, delivery pipeline, and analytics that scaled Vectorgurus into a raster-to-vector platform run by both machines and master illustrators.">
+    <meta property="og:image" content="https://www.epimerlabs.com/images/logo-icon.svg">
+    <link rel="canonical" href="https://www.epimerlabs.com/case-vectorgurus.html">
+    <meta property="og:url" content="https://www.epimerlabs.com/case-vectorgurus.html">
+    <meta property="og:type" content="article">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo-lockup-white.svg" alt="Epimer Labs" class="logo-lockup"></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="work.html" class="active">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="contact.html" class="nav-cta">Let's Collaborate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Case Hero -->
+    <section class="case-hero">
+        <div class="container">
+            <div class="reveal">
+                <span class="case-hero-overline">Case Study &nbsp;/&nbsp; Vectorgurus</span>
+                <h1>How we built the AI plus human routing engine that turned Vectorgurus into a raster-to-vector platform run by both machines and master illustrators</h1>
+                <span class="case-hero-industry">Industry &mdash; Creative software, on-demand illustration</span>
+                <div class="case-meta-chips">
+                    <span class="case-chip">Product Strategy</span>
+                    <span class="case-chip">ML &amp; Vision</span>
+                    <span class="case-chip">Full-stack Build</span>
+                    <span class="case-chip">Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="case-overview">
+        <div class="container">
+            <p class="case-overview-lede reveal">Vectorgurus converts raster artwork into clean, production-ready vector files. Their in-house ML model handles most conversions on its own; the intricate work goes to a global bench of vector artists they call gurus. We built the operating system that lets those two workforces run as one.</p>
+            <div class="case-overview-grid reveal">
+                <div>
+                    <span class="case-overline">Challenge</span>
+                    <p>The AI shipped a good vector for most files, but customers with complex artwork were dropping off. Every failed conversion turned into a manual scramble to find the right guru, brief them, and package the deliverable.</p>
+                </div>
+                <div>
+                    <span class="case-overline">Solution</span>
+                    <p>A full platform build: a vision-model complexity check that decides AI or guru on upload, a routing engine that matches gurus to work, a delivery pipeline built around Illustrator, and an analytics layer that runs the studio.</p>
+                </div>
+                <div>
+                    <span class="case-overline">Result</span>
+                    <div class="case-result-number">68%</div>
+                    <p>of orders now resolved end-to-end by AI, with the rest routed to the right guru in under a minute</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+        <div class="container">
+            <h2 class="reveal">One platform, two workforces</h2>
+            <div class="case-stats reveal">
+                <div>
+                    <span class="case-stat-number">11h</span>
+                    <p>median turnaround on complex guru redraws, down from three days</p>
+                </div>
+                <div>
+                    <span class="case-stat-number">3&times;</span>
+                    <p>increase in per-guru throughput after the Illustrator delivery pipeline shipped</p>
+                </div>
+                <div>
+                    <span class="case-stat-number">1</span>
+                    <p>customer channel that spans AI support, human gurus, and delivery in one thread</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 01 -->
+    <section class="case-feature">
+        <div class="container">
+            <div class="case-feature-row">
+                <div class="case-feature-text reveal">
+                    <span class="case-overline">01</span>
+                    <h2>A complexity check that decides AI or guru on upload</h2>
+                    <p>Every file that lands on the platform runs through a vision model that scores its complexity: line density, negative space, curve count, colour separation. Below a threshold the AI vectoriser takes it; above the threshold it flows straight into the guru queue.</p>
+                    <p>The score is visible to customers before they pay. No more waiting on a bad AI result to discover the file needed a human all along.</p>
+                </div>
+                <div class="case-feature-visual reveal">
+                    <img src="images/case-vectorgurus-routing.png" alt="Vectorgurus complexity check routing an intricate mandala to a guru" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 02 -->
+    <section class="case-feature case-feature-tinted">
+        <div class="container">
+            <div class="case-feature-row case-feature-flip">
+                <div class="case-feature-text reveal">
+                    <span class="case-overline">02</span>
+                    <h2>A delivery pipeline built for how gurus actually work</h2>
+                    <p>Gurus live in Illustrator. Their old workflow lived in fifteen browser tabs. We built a queue that pulls new orders straight into their working environment, packages assets on export, and delivers the final files to the customer the moment the guru clicks send.</p>
+                    <p>Payouts, deadlines, and quality checks ride the same rail. A guru now spends their day drawing, not admin.</p>
+                </div>
+                <div class="case-feature-visual reveal">
+                    <img src="images/case-vectorgurus-pipeline.png" alt="Vectorgurus guru delivery queue with Illustrator export" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 03 -->
+    <section class="case-feature">
+        <div class="container">
+            <div class="case-feature-row">
+                <div class="case-feature-text reveal">
+                    <span class="case-overline">03</span>
+                    <h2>One customer thread, from AI answer to human handoff</h2>
+                    <p>We rebuilt the entire chat backend around one idea: the customer should never have to know whether they are talking to a model or a person. The AI support agent answers what it can and cites its source. Anything ambiguous escalates to the matched guru, in the same thread, with the order context already attached.</p>
+                    <p>The vision model runs on every uploaded asset in the chat, so the AI can talk about the actual artwork instead of asking for a description.</p>
+                </div>
+                <div class="case-feature-visual reveal">
+                    <img src="images/case-vectorgurus-chat.png" alt="Vectorgurus unified customer chat with AI support and guru escalation" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 04 -->
+    <section class="case-feature case-feature-tinted">
+        <div class="container">
+            <div class="case-feature-row case-feature-flip">
+                <div class="case-feature-text reveal">
+                    <span class="case-overline">04</span>
+                    <h2>The analytics that run the studio</h2>
+                    <p>The operations dashboard turns the platform into an instrument. Throughput, AI resolution rate, guru utilisation, revenue mix by complexity tier: every lever the leadership team pulls now has a number behind it.</p>
+                    <p>The same layer powers guru-facing views so illustrators see their own performance the way the business does. It also feeds a social automation pipeline that turns finished redraws into shareable before-and-after content without anyone touching a scheduler.</p>
+                </div>
+                <div class="case-feature-visual reveal">
+                    <img src="images/case-vectorgurus-dashboard.png" alt="Vectorgurus studio analytics dashboard" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="section">
+        <div class="container">
+            <blockquote class="case-quote reveal">
+                <p>&ldquo;We used to sell a vectoriser. After the rebuild we sell a service where the machine and the human are on the same team, and the customer only sees the result.&rdquo;</p>
+                <cite>Founder, Vectorgurus</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Building an AI product that still needs the best humans on the hard cases?</h2>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="images/logo-lockup-white.svg" alt="Epimer Labs" class="logo-lockup"></a>
+                    <p class="footer-tagline">Solving for the exponential.</p>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#strategy">Product Strategy</a></li>
+                        <li><a href="services.html#design">UX/UI Design</a></li>
+                        <li><a href="services.html#design">Design Systems</a></li>
+                        <li><a href="services.html#technology">Web &amp; Mobile Development</a></li>
+                        <li><a href="services.html#technology">AI Solutions</a></li>
+                        <li><a href="services.html#growth">Growth &amp; Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="work.html">Case Studies</a></li>
+                        <li><a href="insights.html">Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/epimer-labs" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Epimer Labs. All rights reserved. Screenshots are illustrative product visualisations, not the live Vectorgurus product.</p>
+                <p><a href="privacy.html" style="color: var(--gray-400);">Privacy Policy</a> | <a href="terms.html" style="color: var(--gray-400);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
