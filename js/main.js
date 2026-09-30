@@ -11,6 +11,7 @@ if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
+        navbar.classList.toggle('menu-open', navMenu.classList.contains('active'));
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -18,6 +19,7 @@ if (menuToggle && navMenu) {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             menuToggle.classList.remove('active');
+            navbar.classList.remove('menu-open');
             document.body.style.overflow = '';
         });
     });
@@ -206,6 +208,60 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(0);
         startTimer();
     });
+});
+
+// ---------- Related Insight Articles ----------
+document.addEventListener('DOMContentLoaded', () => {
+    const articleBody = document.querySelector('.article-body');
+    const articleNav = document.querySelector('.article-footer-nav');
+    if (!articleBody || !articleNav) return;
+
+    const articles = [
+        ['insight-real-cost-of-poor-ux.html', 'Product Design', 'The Real Cost of Poor UX', 'Why design debt compounds across support, delivery, and trust.'],
+        ['insight-design-systems-that-scale.html', 'Design Systems', 'Design Systems That Actually Scale', 'What turns a component library into an organizational capability.'],
+        ['insight-ai-product-design-leverage.html', 'AI & Design', 'AI in Product Design: Leverage, Not Autopilot', 'How to accelerate design work without outsourcing judgment.'],
+        ['insight-enterprise-ai-production.html', 'AI Strategy', 'Why Most Enterprise AI Initiatives Stall', 'Closing the gap between a promising pilot and a reliable product.'],
+        ['insight-designing-trustworthy-ai-interfaces.html', 'Design', 'Designing AI Interfaces People Can Trust', 'Patterns for communicating uncertainty, control, and accountability.'],
+        ['insight-shipping-ai-under-regulatory-scrutiny.html', 'Compliance', 'Shipping AI Under Regulatory Scrutiny', 'Building audit-ready products without making compliance a bottleneck.'],
+        ['insight-model-evaluation-product-decision.html', 'Engineering', 'Model Evaluation Is a Product Decision', 'Define evaluation around outcomes, failure costs, and real conditions.'],
+        ['insight-enterprise-ai-2027.html', 'Trends', 'What Enterprise AI Will Look Like in 2027', 'Beyond chat toward governed workflows and accountable agents.'],
+        ['insight-conversational-interfaces.html', 'Agent UX', 'Conversational Interfaces Are Not Always the Answer', 'When chat helps, when it hurts, and what to use instead.'],
+        ['insight-data-readiness.html', 'Data', 'Data Readiness: The Prerequisite for AI', 'Assess whether your data can support a useful AI product.'],
+        ['insight-prototype-to-production.html', 'Product Strategy', 'From Prototype to Production', 'The guardrails and operating discipline a demo needs to become a product.'],
+        ['insight-ai-product-adoption.html', 'Adoption', 'Building AI Products People Actually Use', 'Designing for durable adoption after the novelty disappears.'],
+        ['insight-responsible-ai-framework.html', 'Responsible AI', 'A Practical Framework for Responsible AI', 'Turn principles into requirements, release decisions, and ownership.'],
+        ['insight-ai-accessibility-checklist.html', 'Accessibility', 'Accessibility Audit Checklist for AI Products', 'Audit dynamic and generated experiences beyond the happy path.'],
+        ['insight-enterprise-ai-build-vs-buy.html', 'Build vs. Buy', 'Build vs. Buy for Enterprise AI', 'Own the differentiating layer while preserving strategic flexibility.']
+    ];
+
+    const currentFile = window.location.pathname.split('/').pop();
+    const currentIndex = articles.findIndex(([file]) => file === currentFile);
+    if (currentIndex < 0) return;
+
+    const related = [1, 2, 3].map(offset => articles[(currentIndex + offset) % articles.length]);
+    const section = document.createElement('aside');
+    section.className = 'related-articles';
+    section.setAttribute('aria-labelledby', 'related-articles-title');
+    section.innerHTML = `
+        <div class="related-articles-inner">
+            <span class="section-label">Keep Reading</span>
+            <h2 id="related-articles-title">Related insights</h2>
+            <div class="related-articles-grid">
+                ${related.map(([file, category, title, excerpt]) => `
+                    <a href="${file}" class="related-article-card">
+                        <span>${category}</span>
+                        <h3>${title}</h3>
+                        <p>${excerpt}</p>
+                        <strong>Read article →</strong>
+                    </a>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    articleNav.before(section);
+
+    const projectLink = articleNav.querySelector('a[href="contact.html"]');
+    if (projectLink) projectLink.textContent = 'Start a Project';
 });
 
 // ---------- Modal (click outside to close, Escape key) ----------
