@@ -569,7 +569,119 @@ p {
     margin-top: var(--space-lg);
 }
 
-/* ---------- Work Showcase Grid ---------- */
+/* ---------- Bespoke Websites ---------- */
+.websites-section { background: var(--white); }
+
+.websites-split {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2.5rem, 6vw, 7rem);
+    align-items: center;
+}
+
+.websites-copy .section-title { margin-bottom: var(--space-md); }
+.websites-copy .section-intro { margin-bottom: var(--space-md); }
+
+.web-services-list {
+    list-style: none;
+    margin: 0 0 var(--space-md);
+    border-top: 1px solid var(--gray-200);
+}
+
+.web-services-list li {
+    position: relative;
+    padding: 0.9rem 0 0.9rem 1.4rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+.web-services-list li::before {
+    content: '↗';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.website-carousel { min-width: 0; }
+
+.website-carousel-viewport {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--gray-100);
+    box-shadow: 0 24px 70px rgba(10, 10, 10, 0.14);
+}
+
+.website-carousel-track {
+    display: flex;
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.website-slide {
+    flex: 0 0 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    overflow: hidden;
+}
+
+.website-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.website-carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: 1.25rem;
+}
+
+.website-carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 100px;
+    background: var(--gray-300);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+.carousel-dot.is-active {
+    width: 28px;
+    background: var(--accent);
+}
+
+.website-carousel-arrows { display: flex; gap: 0.5rem; }
+
+.carousel-arrow {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--gray-300);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--black);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-arrow:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Product Work Showcase ---------- */
 .work-section { background: var(--off-white); }
 
 .work-grid {
@@ -605,6 +717,10 @@ p {
     transition: transform 0.5s ease;
 }
 .work-card:hover .work-card-image img { transform: scale(1.04); }
+
+.products-section .work-card-image { aspect-ratio: 1 / 1; }
+.products-section .work-card-image img { transform: scale(1.12); }
+.products-section .work-card:hover .work-card-image img { transform: scale(1.16); }
 
 .work-card-content {
     padding: var(--space-md);
@@ -1983,6 +2099,7 @@ p {
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
     .work-grid { grid-template-columns: 1fr; }
+    .websites-split { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
     .approach-content { grid-template-columns: 1fr; }
     .impact-grid { grid-template-columns: 1fr; }
     .models-grid { grid-template-columns: 1fr; }
@@ -1994,6 +2111,8 @@ p {
 }
 
 @media (max-width: 768px) {
+    .websites-split { grid-template-columns: 1fr; }
+    .website-carousel { margin-top: var(--space-sm); }
     .menu-toggle { display: flex; }
 
     .nav-menu {

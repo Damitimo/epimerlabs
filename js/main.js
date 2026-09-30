@@ -151,6 +151,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ---------- Website Work Carousel ----------
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+        const track = carousel.querySelector('[data-carousel-track]');
+        const slides = Array.from(carousel.querySelectorAll('.website-slide'));
+        const dotsContainer = carousel.querySelector('[data-carousel-dots]');
+        const previous = carousel.querySelector('[data-carousel-prev]');
+        const next = carousel.querySelector('[data-carousel-next]');
+        if (!track || slides.length < 2) return;
+
+        let current = 0;
+        let timer;
+
+        const dots = slides.map((_, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'carousel-dot';
+            dot.setAttribute('aria-label', `Show website design ${index + 1}`);
+            dot.addEventListener('click', () => showSlide(index, true));
+            dotsContainer.appendChild(dot);
+            return dot;
+        });
+
+        const showSlide = (index, restart = false) => {
+            current = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            slides.forEach((slide, slideIndex) => {
+                const active = slideIndex === current;
+                slide.classList.toggle('is-active', active);
+                slide.setAttribute('aria-hidden', String(!active));
+            });
+            dots.forEach((dot, dotIndex) => {
+                const active = dotIndex === current;
+                dot.classList.toggle('is-active', active);
+                dot.setAttribute('aria-current', active ? 'true' : 'false');
+            });
+            if (restart) startTimer();
+        };
+
+        const startTimer = () => {
+            window.clearInterval(timer);
+            timer = window.setInterval(() => showSlide(current + 1), 5000);
+        };
+
+        previous.addEventListener('click', () => showSlide(current - 1, true));
+        next.addEventListener('click', () => showSlide(current + 1, true));
+        carousel.addEventListener('mouseenter', () => window.clearInterval(timer));
+        carousel.addEventListener('mouseleave', startTimer);
+        carousel.addEventListener('focusin', () => window.clearInterval(timer));
+        carousel.addEventListener('focusout', startTimer);
+
+        showSlide(0);
+        startTimer();
+    });
+});
+
 // ---------- Modal (click outside to close, Escape key) ----------
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
