@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const active = slideIndex === current;
                 slide.classList.toggle('is-active', active);
                 slide.setAttribute('aria-hidden', String(!active));
+                slide.setAttribute('tabindex', active ? '0' : '-1');
             });
             dots.forEach((dot, dotIndex) => {
                 const active = dotIndex === current;
