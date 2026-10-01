@@ -2625,7 +2625,18 @@ p {
 }
 
 @media (max-width: 480px) {
-    html { font-size: 15px; }
+    html { font-size: 16px; }
+    .case-section p,
+    .case-section li,
+    .insight-excerpt,
+    .model-card p,
+    .work-card-content p,
+    .contact-process-step p,
+    .footer-column p,
+    .story-content p {
+        font-size: 1.0625rem;
+        line-height: 1.65;
+    }
     .stats-ribbon .container { grid-template-columns: 1fr 1fr; }
     .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.25rem; }
     .insights-grid { grid-template-columns: 1fr; }
