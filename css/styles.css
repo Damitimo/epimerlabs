@@ -2578,6 +2578,20 @@ p {
     .contact-hero { padding: 8rem 0 3.5rem; }
 
     .model-card { padding: 2rem; }
+    .mission-box,
+    .impact-card,
+    .capability-card,
+    .partner-testimonial,
+    .value-card,
+    .case-testimonial,
+    .benefit-card,
+    .position-card,
+    .application-box,
+    .outcomes-box,
+    .callout-box,
+    .case-metrics {
+        padding: 2rem;
+    }
     .models-grid { margin-top: 2.5rem; }
     .case-studies-grid { gap: 3rem; }
     .case-study-content { padding: 2rem; }
