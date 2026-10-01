@@ -165,6 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let current = 0;
         let timer;
+        let dragStartX = 0;
+        let dragDeltaX = 0;
+        let isDragging = false;
+        let suppressClick = false;
 
         const dots = slides.map((_, index) => {
             const dot = document.createElement('button');
@@ -198,8 +202,63 @@ document.addEventListener('DOMContentLoaded', () => {
             timer = window.setInterval(() => showSlide(current + 1), 5000);
         };
 
-        previous.addEventListener('click', () => showSlide(current - 1, true));
-        next.addEventListener('click', () => showSlide(current + 1, true));
+        const finishDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            track.classList.remove('is-dragging');
+
+            const swipeThreshold = Math.min(carousel.clientWidth * 0.16, 90);
+            if (Math.abs(dragDeltaX) >= swipeThreshold) {
+                showSlide(current + (dragDeltaX < 0 ? 1 : -1), true);
+                suppressClick = true;
+                window.setTimeout(() => { suppressClick = false; }, 300);
+            } else {
+                showSlide(current);
+                startTimer();
+            }
+        };
+
+        const startDrag = (clientX, target) => {
+            if (target.closest('button')) return;
+            isDragging = true;
+            dragStartX = clientX;
+            dragDeltaX = 0;
+            track.classList.add('is-dragging');
+            window.clearInterval(timer);
+        };
+
+        const moveDrag = clientX => {
+            if (!isDragging) return;
+            dragDeltaX = clientX - dragStartX;
+            const offset = -current * carousel.clientWidth + dragDeltaX;
+            track.style.transform = `translateX(${offset}px)`;
+        };
+
+        carousel.addEventListener('touchstart', event => {
+            startDrag(event.touches[0].clientX, event.target);
+        }, { passive: true });
+        carousel.addEventListener('touchmove', event => {
+            moveDrag(event.touches[0].clientX);
+        }, { passive: true });
+        carousel.addEventListener('touchend', finishDrag);
+        carousel.addEventListener('touchcancel', finishDrag);
+        carousel.addEventListener('dragstart', event => event.preventDefault());
+
+        carousel.addEventListener('mousedown', event => {
+            if (event.button !== 0) return;
+            startDrag(event.clientX, event.target);
+        });
+        window.addEventListener('mousemove', event => moveDrag(event.clientX));
+        window.addEventListener('mouseup', finishDrag);
+        carousel.addEventListener('mouseleave', finishDrag);
+        carousel.addEventListener('click', event => {
+            if (!suppressClick) return;
+            event.preventDefault();
+            event.stopPropagation();
+        }, true);
+
+        previous?.addEventListener('click', () => showSlide(current - 1, true));
+        next?.addEventListener('click', () => showSlide(current + 1, true));
         carousel.addEventListener('mouseenter', () => window.clearInterval(timer));
         carousel.addEventListener('mouseleave', startTimer);
         carousel.addEventListener('focusin', () => window.clearInterval(timer));
@@ -285,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <li><a href="services.html#strategy">Product Strategy</a></li>
                         <li><a href="services.html#design">UX/UI Design</a></li>
                         <li><a href="services.html#design">Design Systems</a></li>
+                        <li><a href="print.html">Custom Print</a></li>
                         <li><a href="services.html#technology">Web &amp; Mobile Development</a></li>
                         <li><a href="services.html#technology">AI Solutions</a></li>
                         <li><a href="services.html#growth">Growth &amp; Analytics</a></li>
@@ -310,6 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="footer-column">
                     <h4>Connect</h4>
                     <div class="social-links"><a href="https://www.linkedin.com/company/epimer-labs" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a></div>
+                    <div class="footer-locations" aria-label="Locations">
+                        <span class="footer-location"><span class="footer-location-flag" aria-hidden="true">🇨🇦</span>Canada</span>
+                        <span class="footer-location"><span class="footer-location-flag" aria-hidden="true">🇺🇸</span>United States</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">

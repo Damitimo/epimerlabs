@@ -566,6 +566,106 @@ p {
 
 .client-logo:hover { color: var(--black); }
 
+/* ---------- Print & Brand Production ---------- */
+.print-hero .page-hero-content { max-width: 1120px; }
+.print-intro-section { background: var(--white); }
+.print-carousel .website-carousel-viewport {
+    background: var(--black);
+    box-shadow: 0 24px 70px rgba(10, 10, 10, 0.18);
+}
+.print-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(2rem, 5vw, 4rem);
+    color: var(--white);
+    background: var(--black);
+}
+.print-slide--black { background: var(--black); }
+.print-slide--coral { background: var(--accent); }
+.print-slide--blue { background: #1837c9; }
+.print-slide--sand { background: #dfd8c8; color: var(--black); }
+.print-slide > span {
+    font-size: var(--label);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.print-slide > strong {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+.print-sample-slide { position: relative; background: var(--black); }
+.print-sample-slide img { object-position: center; }
+.print-sample-slide figcaption {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    padding: 0.65rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(10, 10, 10, 0.82);
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    backdrop-filter: blur(10px);
+}
+.print-samples-note {
+    margin: 1rem 0 0;
+    font-size: var(--small);
+    color: var(--gray-400);
+}
+.print-capabilities-section { background: var(--off-white); }
+.print-capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-md);
+}
+.print-capability-card {
+    padding: var(--space-md);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+}
+.print-capability-card > span,
+.print-process-grid > div > span {
+    display: block;
+    color: var(--accent);
+    font-size: var(--label);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+}
+.print-capability-card h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.print-capability-card p { font-size: 1rem; margin-bottom: 0; }
+.print-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-md);
+}
+.print-process-grid > div {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--gray-300);
+}
+.print-process-grid h3 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+
+@media (max-width: 1024px) {
+    .print-capabilities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .print-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .print-capabilities-grid,
+    .print-process-grid { grid-template-columns: 1fr; }
+    .print-capability-card { padding: 2rem; }
+    .print-slide { padding: 2rem; }
+    .print-slide > strong { font-size: clamp(2.5rem, 13vw, 4rem); }
+}
+
 /* ---------- Editorial Article Pages ---------- */
 .article-hero {
     padding: 13rem 0 5rem;
@@ -873,6 +973,9 @@ p {
     border-radius: var(--radius-lg);
     background: var(--gray-100);
     box-shadow: 0 24px 70px rgba(10, 10, 10, 0.14);
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .website-carousel-track {
@@ -880,6 +983,12 @@ p {
     height: 100%;
     transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform;
+    cursor: grab;
+}
+
+.website-carousel-track.is-dragging {
+    transition: none;
+    cursor: grabbing;
 }
 
 .website-slide {
@@ -892,6 +1001,7 @@ p {
 .website-slide img {
     display: block;
     width: 100%;
+    -webkit-user-drag: none;
     height: 100%;
     object-fit: cover;
     object-position: top center;
@@ -1361,6 +1471,26 @@ p {
 }
 .social-links a:hover { color: var(--white); }
 
+.footer-locations {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-top: 1.25rem;
+    color: var(--gray-400);
+    font-size: var(--small);
+}
+
+.footer-location {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.footer-location-flag {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
 .footer-bottom {
     padding-top: var(--space-md);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1395,6 +1525,22 @@ p {
     color: var(--gray-500);
     line-height: 1.6;
 }
+
+/* The Work intro is shorter than the other interior-page heroes, so it needs
+   a tighter desktop frame rather than inheriting their oversized top offset. */
+.work-hero {
+    min-height: clamp(32rem, 68vh, 40rem);
+    padding: 11rem 0 5rem;
+}
+
+.work-hero .page-hero-content { max-width: 70rem; }
+
+.work-hero h1 {
+    max-width: 68rem;
+    text-wrap: balance;
+}
+
+.work-hero .page-hero-subtitle { max-width: 46rem; }
 
 /* ---------- Services Page ---------- */
 .capabilities-section { background: var(--off-white); }
@@ -2596,6 +2742,20 @@ p {
     .case-studies-grid { gap: 3rem; }
     .case-study-content { padding: 2rem; }
     .work-apps-section .case-studies-grid { margin-top: 2.5rem; }
+    .work-apps-section .case-study { padding: 2rem; }
+    .work-apps-section .case-study-content { padding: 0; }
+    .work-apps-section .content-with-image-right {
+        gap: 2rem;
+        margin-bottom: 0;
+        min-width: 0;
+    }
+    .work-apps-section .content-with-image-right .text-content,
+    .work-apps-section .content-with-image-right .image-content {
+        width: 100%;
+        min-width: 0;
+    }
+    .work-apps-section .case-section { margin: 0; }
+    .work-apps-section .case-section p { overflow-wrap: anywhere; }
 
     .footer-top { flex-direction: column; gap: var(--space-md); }
     .footer { padding: 4rem 0 2rem; }
