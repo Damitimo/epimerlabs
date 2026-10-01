@@ -944,6 +944,8 @@ p {
 
 /* ---------- Product Work Showcase ---------- */
 .work-section { background: var(--off-white); }
+.work-apps-section { background: var(--off-white); }
+.work-apps-section .case-studies-grid { margin-top: var(--space-lg); }
 
 .work-grid {
     display: grid;
@@ -2454,8 +2456,14 @@ p {
 }
 
 @media (max-width: 768px) {
+    .section { padding: 4rem 0; }
+    .section-header { margin-bottom: 2.5rem; }
+    .section-title { margin-bottom: 1.25rem; }
+    .section-intro { font-size: 1.1rem; line-height: 1.6; }
+
     .websites-split { grid-template-columns: 1fr; }
-    .website-carousel { margin-top: var(--space-sm); }
+    .websites-split { gap: 3rem; }
+    .website-carousel { margin-top: 0; }
     .menu-toggle { display: flex; }
 
     .navbar.menu-open {
@@ -2562,15 +2570,42 @@ p {
     .case-section ul { grid-template-columns: 1fr; }
 
     .contact-grid { grid-template-columns: 1fr; }
+    .contact-section { padding: 4rem 0; }
     .contact-info { position: static; }
     .contact-other .models-grid { grid-template-columns: 1fr; }
-    .contact-hero { padding-top: 9rem; }
+    .contact-hero { padding: 8rem 0 3.5rem; }
+
+    .model-card { padding: 2rem; }
+    .models-grid { margin-top: 2.5rem; }
+    .case-studies-grid { gap: 3rem; }
+    .case-study-content { padding: 2rem; }
+    .work-apps-section .case-studies-grid { margin-top: 2.5rem; }
 
     .footer-top { flex-direction: column; gap: var(--space-md); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer { padding: 4rem 0 2rem; }
+    .footer-top { padding-bottom: 2.5rem; margin-bottom: 2.5rem; }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 2rem;
+        margin-bottom: 2.5rem;
+    }
+    .footer-brand .logo .logo-lockup { max-width: 260px; }
+    .footer-tagline { text-align: left; }
     .footer-bottom { flex-direction: column; text-align: center; }
 
-    .page-hero { min-height: auto; padding-top: 8rem; }
+    .page-hero { min-height: auto; padding: 8rem 0 4rem; }
+
+    .cta-section { padding: 4.5rem 0; }
+    .cta-content h2 { margin-bottom: 2rem; }
+    .newsletter-section { padding: 4rem 0; }
+
+    .article-hero { padding: 8rem 0 3.5rem; }
+    .article-body { padding: 3.5rem 0; }
+    .article-body h2 { margin: 3rem 0 1rem; }
+    .article-pullquote { margin: 2.5rem 0; padding-left: 1.25rem; }
+    .related-articles { padding: 4rem 0; }
+    .related-articles h2 { margin-bottom: 2rem; }
+    .article-footer-nav { padding: 2rem 0 4rem; }
 
     .cta-buttons { flex-direction: column; }
     .btn { width: 100%; justify-content: center; }
@@ -2590,7 +2625,7 @@ p {
 @media (max-width: 480px) {
     html { font-size: 15px; }
     .stats-ribbon .container { grid-template-columns: 1fr 1fr; }
-    .footer-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.25rem; }
     .insights-grid { grid-template-columns: 1fr; }
     .numbers-grid { grid-template-columns: 1fr; }
 }
