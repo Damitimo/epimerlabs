@@ -264,6 +264,63 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectLink) projectLink.textContent = 'Start a Project';
 });
 
+// ---------- Shared Article Footer ----------
+document.addEventListener('DOMContentLoaded', () => {
+    if (!document.querySelector('.article-body') || document.querySelector('footer.footer')) return;
+
+    const footer = document.createElement('footer');
+    footer.className = 'footer';
+    footer.innerHTML = `
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="images/logo-lockup-white.svg" alt="Epimer Labs" class="logo-lockup"></a>
+                    <p class="footer-tagline">Solving for the exponential.</p>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#strategy">Product Strategy</a></li>
+                        <li><a href="services.html#design">UX/UI Design</a></li>
+                        <li><a href="services.html#design">Design Systems</a></li>
+                        <li><a href="services.html#technology">Web &amp; Mobile Development</a></li>
+                        <li><a href="services.html#technology">AI Solutions</a></li>
+                        <li><a href="services.html#growth">Growth &amp; Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="work.html">Case Studies</a></li>
+                        <li><a href="insights.html">Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <div class="social-links"><a href="https://www.linkedin.com/company/epimer-labs" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Epimer Labs. All rights reserved.</p>
+                <p><a href="privacy.html" style="color: var(--gray-400);">Privacy Policy</a> | <a href="terms.html" style="color: var(--gray-400);">Terms of Service</a></p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(footer);
+});
+
 // ---------- Modal (click outside to close, Escape key) ----------
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
